@@ -12,4 +12,8 @@ defmodule AlchemyMarkdown do
   def big(text) do
     Regex.replace(~r/\+\+(.*)\+\+/, text, "<big>\\1</big>")
   end
+
+  def hrs(text) do
+    Regex.replace(~r{([-*])( *\1 *)+\1}, text, "<hr />")
+  end
 end
