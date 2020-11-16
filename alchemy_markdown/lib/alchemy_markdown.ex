@@ -1,6 +1,6 @@
 defmodule AlchemyMarkdown do
   def to_html(markdown) do
-    markdown
+    Earmark.as_html(markdown) || ""), %EarMark.Options(smartypants: false)
   end
 
   def hello do
