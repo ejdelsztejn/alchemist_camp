@@ -22,9 +22,12 @@ defmodule AlchemyMarkdownTest do
     str2 = "Stuff over the line\n***"
     str3 = "Stuff over the line\n- - -"
     str4 = "Stuff over the line\n*    *    *"
+    str5 = "Stuff over the line*    *    *"
 
     Enum.map([str1, str2, str3, str4], fn str ->
       assert AlchemyMarkdown.hrs(str) == "Stuff over the line\n<hr />"
     end)
+
+    assert AlchemyMarkdown.hrs(str5) == str5
   end
 end

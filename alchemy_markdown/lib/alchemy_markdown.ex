@@ -14,6 +14,6 @@ defmodule AlchemyMarkdown do
   end
 
   def hrs(text) do
-    Regex.replace(~r{([-*])( *\1 *)+\1}, text, "<hr />")
+    Regex.replace(~r{\r\n|\r|\n([-*])( *\1 *)+\1}, text, "<hr />")
   end
 end
