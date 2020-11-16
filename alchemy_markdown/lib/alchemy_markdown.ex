@@ -1,17 +1,8 @@
 defmodule AlchemyMarkdown do
-  @moduledoc """
-  Documentation for `AlchemyMarkdown`.
-  """
+  def to_html(markdown) do
+    markdown
+  end
 
-  @doc """
-  Hello world.
-
-  ## Examples
-
-      iex> AlchemyMarkdown.hello()
-      :world
-
-  """
   def hello do
     :world
   end
