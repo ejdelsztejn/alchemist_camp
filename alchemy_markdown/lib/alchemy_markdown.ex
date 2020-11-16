@@ -1,9 +1,14 @@
 defmodule AlchemyMarkdown do
   def to_html(markdown) do
-    Earmark.as_html!((markdown) || "", %Earmark.Options{smartypants: false})
+    markdown
+      |> hrs
+      |> earmark
       |> big
       |> small
-      |> hrs
+  end
+
+  def earmark(markdown) do
+    Earmark.as_html!((markdown) || "", %Earmark.Options{smartypants: false})
   end
 
   def small(text) do
@@ -27,6 +32,8 @@ defmodule AlchemyMarkdown do
     I *really* disagree with you!
 
     You can **strongly** emphasize text
+    - - -
+    ## Another section
 
     You can make lists of
 
@@ -35,6 +42,7 @@ defmodule AlchemyMarkdown do
     3) Three
 
     things ++big things!++ --small things!--
+    *      **
     """
   end
 end
