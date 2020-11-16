@@ -11,4 +11,9 @@ defmodule AlchemyMarkdownTest do
     str = "Some ++big++ words!"
     assert AlchemyMarkdown.to_html(str) =~ "<big>big</big> words"
   end
+
+  test "expands small tags" do
+    str = "Some --small-- words!"
+    assert AlchemyMarkdown.to_html(str) =~ "<small>small</small> words"
+  end
 end
